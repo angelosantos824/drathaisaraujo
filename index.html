@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clínica Dra. Thaís Araújo</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img src="img/logoclinica.png" alt="Logo Clínica Dra. Thaís Araújo" class="brand-logo" />
+    </div>
+    <nav class="main-nav">
+      <a href="about.html">Sobre</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="#horario">Horário</a>
+      <a href="#localizacao">Localização</a>
+      <a href="login.html" class="button button-secondary">Entrar</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero hero-home">
+      <div class="hero-overlay"></div>
+      <div class="hero-card">
+        <span class="eyebrow">Cuidado que transforma</span>
+        <h1>Sorriso e Autoestima</h1>
+        <p>Odontologia geral e harmonização facial com excelência e responsabilidade.</p>
+        <div class="hero-actions">
+          <a href="https://wa.me/5592994088161" class="button button-primary" target="_blank" rel="noopener">Falar no WhatsApp</a>
+          <a href="login.html" class="button button-secondary">Agendar Consulta</a>
+        </div>
+      </div>
+      <div class="hero-side-image"></div>
+    </section>
+
+    <div class="welcome-modal-overlay hidden" id="welcomeModal">
+      <div class="welcome-modal">
+        <button class="modal-close" id="closeWelcomeModal" aria-label="Fechar">×</button>
+        <h2>Bem-vindo à Clínica Dra. Thaís Araújo</h2>
+        <p>Uma clínica dedicada à saúde bucal e à estética facial, com atendimento humanizado, tecnologia moderna e tratamentos personalizados para todas as idades.</p>
+        <div class="home-links modal-links">
+          <a href="about.html" class="button button-secondary">Conheça a Clínica</a>
+          <a href="servicos.html" class="button button-primary">Veja nossos Serviços</a>
+        </div>
+      </div>
+    </div>
+
+    <section id="horario" class="section-block">
+      <h3>Horário de funcionamento</h3>
+      <div class="info-grid">
+        <div>
+          <p>Segunda a sexta</p>
+          <strong>08h às 12h / 14h às 18h</strong>
+        </div>
+        <div>
+          <p>Sábado</p>
+          <strong>08h às 12h</strong>
+        </div>
+      </div>
+    </section>
+
+    <section id="localizacao" class="section-block alt">
+      <h3>Localização</h3>
+      <p>R. Rio Amazonas, 3738 - Lot L Azul, Manacapuru - AM, 69402-238, Manacapuru - AM</p>
+      <div class="map-frame">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.1918315265684!2d-60.62815078469123!3d-3.2931864971538095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9294e6cc1e9f3f7d%3A0xb8f3bd9f8f1bb15f!2sRua%20Rio%20Amazonas%2C%203738%20-%20Lot%20L%20Azul%2C%20Manacapuru%20-%20AM%2C%2069402-238!5e0!3m2!1spt-BR!2sbr!4v1703431519236!5m2!1spt-BR!2sbr"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+
+    <section class="section-block contact-panel">
+      <h3>Pronto para agendar?</h3>
+      <p>Fale conosco pelo WhatsApp ou visite nossa área de agendamento interna.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5592994088161" class="button button-primary" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="login.html" class="button button-secondary">Agendar consulta</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Clínica Dra. Thaís Araújo | Telefone/WhatsApp: +55 92 99408-8161  |  Desenvolvido por <a href="https://www.dozedev.pt" target="_blank" rel="noopener">DOZEDEV.PT</a>
+  </footer>
+  <script>
+    const siteHeader = document.querySelector('.site-header');
+    const welcomeModal = document.getElementById('welcomeModal');
+    const closeWelcomeModal = document.getElementById('closeWelcomeModal');
+
+    window.addEventListener('scroll', () => {
+      if (!siteHeader) return;
+      siteHeader.classList.toggle('hidden', window.scrollY > 20);
+    });
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        welcomeModal.classList.remove('hidden');
+      }, 5000);
+    });
+
+    closeWelcomeModal.addEventListener('click', () => {
+      welcomeModal.classList.add('hidden');
+    });
+
+    welcomeModal.addEventListener('click', (event) => {
+      if (event.target === welcomeModal) {
+        welcomeModal.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+</html>

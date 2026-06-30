@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fluxo de Caixa - Clínica Dra. Thaís Araújo</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="dashboard-header">
+    <div>
+      <h1>Fluxo de Caixa</h1>
+      <p>Registre entradas, saídas e acompanhe o financeiro da clínica.</p>
+    </div>
+    <nav class="dashboard-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="pacientes.html">Pacientes</a>
+      <a href="agendamentos.html">Agendamentos</a>
+      <a href="relatorios.html">Relatórios</a>
+      <a href="index.html" class="button button-secondary">Sair</a>
+    </nav>
+  </header>
+
+  <main class="page-content">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+
+    <section class="card table-card">
+      <h2>Movimentos do caixa</h2>
+      <div class="filter-row">
+        <select id="filtro-caixa-mes">
+          <option value="">Mês</option>
+          <option value="01">Janeiro</option>
+          <option value="02">Fevereiro</option>
+          <option value="03">Março</option>
+          <option value="04">Abril</option>
+          <option value="05">Maio</option>
+          <option value="06">Junho</option>
+          <option value="07">Julho</option>
+          <option value="08">Agosto</option>
+          <option value="09">Setembro</option>
+          <option value="10">Outubro</option>
+          <option value="11">Novembro</option>
+          <option value="12">Dezembro</option>
+        </select>
+        <input type="number" id="filtro-caixa-ano" placeholder="Ano" min="2024" />
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Tipo</th>
+              <th>Paciente</th>
+              <th>Agendamento</th>
+              <th>Categoria</th>
+              <th>Valor</th>
+              <th>Pagamento</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="caixa-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <section class="card form-card">
+      <h2>Registrar movimento</h2>
+      <form id="caixa-form">
+        <input type="hidden" id="caixa-id" />
+
+        <label for="tipo">Tipo</label>
+        <select id="tipo" required>
+          <option value="entrada">Entrada</option>
+          <option value="saida">Saída</option>
+        </select>
+
+        <label for="data">Data</label>
+        <input type="date" id="data" required />
+
+        <label for="valor">Valor</label>
+        <input type="number" id="valor" step="0.01" min="0" required />
+
+        <label for="forma_pagamento">Forma de pagamento</label>
+        <select id="forma_pagamento" required>
+          <option value="Dinheiro">Dinheiro</option>
+          <option value="Pix">Pix</option>
+          <option value="Cartão">Cartão</option>
+          <option value="Transferência">Transferência</option>
+          <option value="Outro">Outro</option>
+        </select>
+
+        <label for="paciente-caixa">Paciente (opcional)</label>
+        <select id="paciente-caixa">
+          <option value="">Selecione um paciente</option>
+        </select>
+
+        <label for="agendamento-caixa">Agendamento (opcional)</label>
+        <select id="agendamento-caixa">
+          <option value="">Selecione um agendamento</option>
+        </select>
+
+        <label for="categoria-caixa">Categoria</label>
+        <select id="categoria-caixa">
+          <option value="">Selecione uma categoria</option>
+        </select>
+
+        <label for="descricao">Descrição</label>
+        <textarea id="descricao"></textarea>
+
+        <div class="form-actions">
+          <button type="submit" class="button button-primary">Salvar</button>
+          <button type="button" id="limpar-caixa" class="button button-outline">Limpar</button>
+        </div>
+      </form>
+    </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/supabase.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/caixa.js"></script>
+</body>
+</html>

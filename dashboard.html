@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Clínica Dra. Thaís Araújo</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="dashboard-header">
+    <div>
+      <h1>Dashboard</h1>
+      <p>Resumo rápido da clínica e acesso para os módulos de gestão.</p>
+    </div>
+    <nav class="dashboard-nav">
+      <a href="pacientes.html">Pacientes</a>
+      <a href="agendamentos.html">Agendamentos</a>
+      <a href="caixa.html">Fluxo de Caixa</a>
+      <a href="relatorios.html">Relatórios</a>
+      <a href="index.html" class="button button-secondary">Sair</a>
+    </nav>
+  </header>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+  <main class="dashboard-grid">
+    <section class="card summary-card">
+      <h2>Total de pacientes</h2>
+      <p id="total-pacientes">0</p>
+    </section>
+    <section class="card summary-card">
+      <h2>Agendamentos do mês</h2>
+      <p id="total-agendamentos">0</p>
+    </section>
+    <section class="card summary-card">
+      <h2>Entradas no mês</h2>
+      <p id="total-entradas">R$ 0,00</p>
+    </section>
+    <section class="card summary-card">
+      <h2>Saídas no mês</h2>
+      <p id="total-saidas">R$ 0,00</p>
+    </section>
+    <section class="card summary-card wide-card">
+      <h2>Saldo mensal</h2>
+      <p id="saldo-mensal">R$ 0,00</p>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/supabase.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

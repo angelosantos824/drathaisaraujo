@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Relatórios - Clínica Dra. Thaís Araújo</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="dashboard-header">
+    <div>
+      <h1>Relatórios</h1>
+      <p>Visualize entradas, saídas e saldo por mês.</p>
+    </div>
+    <nav class="dashboard-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="pacientes.html">Pacientes</a>
+      <a href="agendamentos.html">Agendamentos</a>
+      <a href="caixa.html">Fluxo de Caixa</a>
+      <a href="index.html" class="button button-secondary">Sair</a>
+    </nav>
+  </header>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+  <main class="page-content">
+    <section class="card form-card">
+      <h2>Filtrar relatório</h2>
+      <div class="filter-row">
+        <label for="relatorio-mes">Mês</label>
+        <select id="relatorio-mes" required>
+          <option value="">Selecione</option>
+          <option value="01">Janeiro</option>
+          <option value="02">Fevereiro</option>
+          <option value="03">Março</option>
+          <option value="04">Abril</option>
+          <option value="05">Maio</option>
+          <option value="06">Junho</option>
+          <option value="07">Julho</option>
+          <option value="08">Agosto</option>
+          <option value="09">Setembro</option>
+          <option value="10">Outubro</option>
+          <option value="11">Novembro</option>
+          <option value="12">Dezembro</option>
+        </select>
+
+        <label for="relatorio-ano">Ano</label>
+        <input type="number" id="relatorio-ano" placeholder="2024" min="2024" required />
+
+        <label for="relatorio-categoria">Categoria</label>
+        <select id="relatorio-categoria">
+          <option value="">Todas as categorias</option>
+        </select>
+
+        <label for="relatorio-pagamento">Forma de pagamento</label>
+        <select id="relatorio-pagamento">
+          <option value="">Todos</option>
+          <option value="Dinheiro">Dinheiro</option>
+          <option value="Pix">Pix</option>
+          <option value="Cartão">Cartão</option>
+          <option value="Transferência">Transferência</option>
+          <option value="Outro">Outro</option>
+        </select>
+      </div>
+      <div class="summary-card report-summary">
+        <div>
+          <h3>Entradas</h3>
+          <p id="relatorio-total-entradas">R$ 0,00</p>
+        </div>
+        <div>
+          <h3>Saídas</h3>
+          <p id="relatorio-total-saidas">R$ 0,00</p>
+        </div>
+        <div>
+          <h3>Saldo</h3>
+          <p id="relatorio-saldo">R$ 0,00</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card table-card">
+      <h2>Detalhes do relatório</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Tipo</th>
+              <th>Categoria</th>
+              <th>Pagamento</th>
+              <th>Valor</th>
+              <th>Descrição</th>
+            </tr>
+          </thead>
+          <tbody id="relatorio-tabela"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/supabase.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/relatorios.js"></script>
+</body>
+</html>
