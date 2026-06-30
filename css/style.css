@@ -594,7 +594,7 @@ small,
 .form-card,
 .table-card,
 .page-content {
-  width: min(50%, 640px);
+  width: min(50%, 980px);
   position: relative;
   z-index: 1;
 }
